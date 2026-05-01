@@ -1,0 +1,587 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding-top: 0; /* Adjust the value as needed */
+}
+
+#jumcia {
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-family: "Baskerville";
+  color: #fff;
+}
+
+/* Navigation Bar Styles */
+.custom-navbar {
+  background-color: #daae81;
+  top: 0;
+  width: 100%;
+}
+
+.custom-navbar .navbar-brand {
+  color: #ffffff;
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff;
+  font-family: "Baskerville";
+  font-size: large;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #3b2617;
+}
+
+.custom-navbar .navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-family: "Pacifico", serif;
+  padding-left: 20px;
+  padding-right: 15px !important;
+}
+
+.custom-navbar .navbar-brand:hover {
+  color: #3b2617;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .custom-navbar .navbar-brand,
+  .custom-navbar .nav-link {
+    font-size: 1.2rem; /* Adjust font size for mobile */
+    padding: 10px 15px; /* Adjust padding for mobile */
+  }
+}
+
+/* Back Button Styling */
+.back-button {
+  position: fixed;
+  top: 90px;
+  left: 20px;
+
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+
+  color: #784e2c;
+  border: none;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background: #cf9b69;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Background Image Section */
+.bg-image-section {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out; /* Smooth fade transition */
+}
+
+.content {
+  padding-top: 70px;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Baskerville";
+  color: #784e2c;
+}
+
+.content h1 {
+  font-family: "Baskerville";
+  color: #784e2c;
+}
+
+.content p {
+  font-family: "Baskerville";
+  font-size: 22px;
+  color: #784e2c;
+}
+
+#p1 {
+  font-family: "Baskerville";
+  color: #fff;
+  font-size: 60px;
+}
+
+#p2 {
+  font-family: "Dancing Script";
+  color: #fff;
+  font-size: 45px;
+  text-align: center;
+  padding: 15px 15px;
+}
+
+/* Styling for book now button */
+.booknow {
+  background-color: #cf9b69;
+  font-family: "Open Sans", sans-serif;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.booknow:hover {
+  background-color: #a87848;
+}
+
+/* Styling for Gallery Section */
+#gallery {
+  background-color: #f5f5f5; /* Light background color */
+  padding: 60px 0;
+}
+
+.gallery-img img {
+  width: 100%;
+  height: 200px; /* Set a fixed height for all images */
+  object-fit: cover;
+  transition: transform 0.3s; /* Smooth transition for scaling */
+}
+
+/* Styling for the View More link */
+#gallery .btn {
+  background-color: #e1dbd0;
+  color: #784e2c;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none; /* Corrected border */
+  text-transform: uppercase;
+  transition:
+    background-color 0.3s,
+    transform 0.3s; /* Smooth transitions for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+}
+
+#gallery .btn:hover {
+  background-color: #dfd5bc;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.01);
+}
+
+/* Styling For About Us Section */
+.about-us p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-us img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#decorations-themes {
+  background-color: #f2ecff;
+  padding: 60px 0;
+}
+
+#decorations-themes .card {
+  border: none;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+#decorations-themes .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#decorations-themes .card-title {
+  font-family: "Great Vibes";
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#decorations-themes .card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.decor-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.decor-link:hover {
+  color: #000;
+}
+
+/* Styling for the Customer Reviews section */
+.reviews {
+  background-color: #f5f5f5; /* Light background color for contrast */
+  padding: 60px 0;
+}
+
+.review-box {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.review {
+  border-left: 3px solid #dcc8ad; /* Add a left border for emphasis */
+  padding-left: 20px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.review-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.reviewer {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: right;
+  margin: 0;
+}
+
+/* Styling for Contact Us Section */
+.contact {
+  background-color: #f2ecff; /* Light background color */
+  padding: 60px 0;
+}
+
+.contact .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-family: "Open Sans", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact .form-group {
+  margin-bottom: 20px;
+}
+
+.contact .form-control {
+  border-radius: 4px;
+  box-shadow: none;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.contact .btn-primary {
+  background-color: #cf9b69; /* Customize button color */
+  border-color: #d0b27a;
+  font-family: "Open Sans", sans-serif;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.contact .btn-primary:hover {
+  background-color: #a87848;
+  border-color: #d0b27a;
+}
+
+/* Decorations */
+.showcase-title {
+  font-family: "Baskerville", serif;
+  color: #784e2c;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.showcase {
+  column-count: 4;
+  column-gap: 20px;
+  padding: 10px;
+}
+
+.showcase-item {
+  margin-bottom: 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.showcase-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.showcase-item a {
+  display: block;
+  position: relative;
+  text-decoration: none; /* Remove underline from link */
+  color: inherit; /* Inherit text color */
+}
+
+.showcase-image img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.4s ease;
+}
+
+.showcase-item:hover img {
+  transform: scale(1.08);
+}
+
+.showcase-image img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+.overlay h4 {
+  font-family: "Great Vibes";
+  font-size: 1.4rem;
+}
+
+.overlay p {
+  font-size: 0.9rem;
+}
+
+.showcase-item:hover .overlay {
+  opacity: 1;
+}
+
+.showcase-item:hover .overlay {
+  opacity: 1;
+}
+
+.showcase-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+  .showcase {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase {
+    column-count: 1;
+  }
+}
+
+/* Button Styling */
+.btn-book {
+  background-color: #cf9b69;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: inline-block; /* Ensure it fits well with text */
+}
+
+/* Button Hover Effect */
+.btn-book:hover {
+  background-color: #a87848;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #daae81; /* Same color as the navbar */
+  color: white; /* Text color */
+  text-align: center; /* Center the text */
+  padding: 10px 0; /* Padding for the footer */
+  width: 100%; /* Full width */
+}
+
+.footer-content {
+  display: flex; /* Use flexbox to align items in one row */
+  justify-content: center; /* Center content horizontally */
+  gap: 20px; /* Adds space between the items */
+  flex-wrap: wrap; /* Wrap items if needed on smaller screens */
+}
+
+.footer-content p {
+  margin: 0; /* Removes default margins */
+  padding: 0 10px; /* Adds padding for better spacing */
+}
+
+/* Quick Links Styles */
+.quick-links {
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: center; /* Center the links */
+  gap: 20px; /* Spacing between the links */
+  margin-top: 2px; /* Space above the quick links */
+}
+
+.quick-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Font size for the links */
+  font-weight: 500; /* Slightly bolder text */
+  padding: 0 10px; /* Padding for the links */
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease; /* Smooth transition */
+}
+
+.quick-links a:hover {
+  color: #3b2617; /* Hover text color */
+  background-color: white; /* Hover background color */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* FILTER WRAPPER */
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 40px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  align-items: center;
+}
+
+/* INPUTS */
+.filter-bar input,
+.filter-bar select {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.filter-bar button {
+  background: #cf9b69;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.filter-bar button:hover {
+  background: #a87848;
+}
+
+/* RESET BUTTON */
+.reset-btn {
+  background: #eee;
+  color: #784e2c;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.reset-btn:hover {
+  background: #ddd;
+  color: #784e2c;
+}
+
+/* HERO BUTTON */
+.hero-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 25px;
+  background: #cf9b69;
+  color: white;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #a87848;
+  color: #3b2617;
+}
+
+/* SUBTEXT */
+#jumcia {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+/* BASE ANIMATION */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* DELAYS */
+.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.delay-2 {
+  animation-delay: 0.8s;
+}
+
+/* KEYFRAME */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

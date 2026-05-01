@@ -1,0 +1,130 @@
+/* BODY */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding-top: 70px;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #bc9984;
+  padding: 12px 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 26px;
+  font-family: "Dancing Script";
+}
+
+.navbar-brand:hover {
+  color: #fff;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 230px;
+  background: #efe7df;
+  height: 100vh;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: #784e2c;
+  font-size: 16px;
+  padding: 12px 20px;
+  margin: 5px 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.sidebar .nav-link:hover {
+  background: #cf9b69;
+  color: white;
+}
+
+.sidebar .nav-link.active {
+  background: #cf9b69;
+  color: white;
+}
+
+/* MAIN */
+.admin-panel {
+  margin-left: 240px;
+  padding: 30px;
+}
+
+main {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADINGS */
+h1,
+h2 {
+  color: #b58d6d;
+  font-family: "Dancing Script";
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #cf9b69;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+}
+
+td {
+  padding: 12px;
+  font-size: 14px;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #f1e2d3;
+}
+
+/* BUTTONS */
+.button,
+.btn-submit {
+  background: #cf9b69;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: white;
+  transition: 0.3s;
+}
+
+.button:hover,
+.btn-submit:hover {
+  background: #a87848;
+}
+
+/* FORM */
+.form-control {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* TEXT */
+p {
+  color: #555;
+}
