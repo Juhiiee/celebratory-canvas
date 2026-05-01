@@ -14,7 +14,6 @@ if ($conn->connect_error) {
 }
 
 // Fetch Engagement images from the decorations table
-// Fetch Wedding images from the decorations table
 $min_price = $_GET['min_price'] ?? '';
 $max_price = $_GET['max_price'] ?? '';
 $search = $_GET['search'] ?? '';

@@ -75,7 +75,7 @@ $conn->close();
                             <a class="nav-link active" href="vendor-panel.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="vendor-decorations.php">My Decorations</a>
+                            <a class="nav-link" href="vendor-add-decorations.php">Add Decorations</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="vendor-orders.php">My Orders</a>

@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
                 </div>
                 <input type="submit" value="Login" name="submit" class="btn btn-primary w-100">
                 <p class="mt-3 text-center"><strong>Don't have an account? <a href="signup.php">Sign Up</a></strong></p>
-                <p class="mt-3 text-center"><strong><a href="vendor-login.php">Are you Vendor?</a></strong></p>
+                <p class="mt-3 text-center"><strong><a href="vendor-login.php">Are you a Vendor?</a></strong></p>
 
             </form>
         </div>

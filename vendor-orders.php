@@ -14,10 +14,10 @@ if ($conn->connect_error) {
 }
 
 $vendor_id = $_SESSION['vendor_id'];
-$vendor_name = $_SESSION['vendor_name'];
 
 // Fetch orders related to this vendor's decorations
-$sql = "SELECT o.order_id, o.event_date, o.venue, o.total_amount, o.vendor_commission, c.c_name, o.contact_info, d.decoration_id 
+// Updated to include base_price and vendor_payout
+$sql = "SELECT o.order_id, o.event_date, o.venue, o.decoration_id, o.base_price, o.vendor_payout, c.c_name, o.contact_info 
         FROM orders o
         JOIN decorations d ON o.decoration_id = d.decoration_id
         JOIN customers c ON o.c_id = c.c_id
@@ -29,7 +29,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 $orders = $result->fetch_all(MYSQLI_ASSOC);
 
-// Close the database connection
 $conn->close();
 ?>
 
@@ -50,10 +49,6 @@ $conn->close();
     <header class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Celebratory Canvas Vendor Panel</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -98,8 +93,9 @@ $conn->close();
                                     <th>Order ID</th>
                                     <th>Event Date</th>
                                     <th>Venue</th>
-                                    <th>Decoration ID</th> <!-- New column -->
-                                    <th>Vendor Commission</th>
+                                    <th>Decoration ID</th>
+                                    <th>Total Value</th> <!-- Updated Label -->
+                                    <th>Your Earnings</th> <!-- Updated Label -->
                                     <th>Customer Name</th>
                                     <th>Customer Contact</th>
                                 </tr>
@@ -110,8 +106,9 @@ $conn->close();
                                         <td><?php echo htmlspecialchars($order['order_id']); ?></td>
                                         <td><?php echo htmlspecialchars($order['event_date']); ?></td>
                                         <td><?php echo htmlspecialchars($order['venue']); ?></td>
-                                        <td><?php echo htmlspecialchars($order['decoration_id']); ?></td> <!-- New field -->
-                                        <td>₹<?php echo htmlspecialchars($order['vendor_commission']); ?></td>
+                                        <td><?php echo htmlspecialchars($order['decoration_id']); ?></td>
+                                        <td>₹<?php echo htmlspecialchars($order['base_price']); ?></td> <!-- base_price -->
+                                        <td><strong>₹<?php echo htmlspecialchars($order['vendor_payout']); ?></strong></td> <!-- vendor_payout -->
                                         <td><?php echo htmlspecialchars($order['c_name']); ?></td>
                                         <td><?php echo htmlspecialchars($order['contact_info']); ?></td>
                                     </tr>

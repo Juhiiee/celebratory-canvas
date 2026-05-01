@@ -19,9 +19,10 @@ $max_price = $_GET['max_price'] ?? '';
 $search = $_GET['search'] ?? '';
 $sort = $_GET['sort'] ?? '';
 
-$sql = "SELECT decoration_id, decoration_name, img_path, decoration_price 
-        FROM decorations 
-        WHERE category = 'wedding'";
+$sql = "SELECT d.decoration_id, d.decoration_name, d.img_path, d.decoration_price, v.vendor_name 
+        FROM decorations d 
+        JOIN vendors v ON d.vendor_id = v.vendor_id 
+        WHERE d.category = 'wedding'";
 
 // SEARCH
 if (!empty($search)) {
@@ -122,22 +123,23 @@ $result = $conn->query($sql);
                 <?php
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        echo '<div class="showcase-item">';
-                        echo '    <a href="decoration-details.php?decoration_id=' . $row["decoration_id"] . '">';
-                        echo '        <div class="showcase-image">';
-                        echo '            <img src="' . $row["img_path"] . '" alt="' . $row["decoration_name"] . '">';
-                        echo '        </div>';
-                        echo '        <div class="overlay">';
-                        echo '            <h4>' . $row["decoration_name"] . '</h4>';
-                        echo '            <p>Price: ₹' . $row["decoration_price"] . '</p>';
-                        echo '        <form action="booking.php" method="GET">';
-                        echo '            <input type="hidden" name="decoration_id" value="' . $row["decoration_id"] . '">';
-                        echo '            <button type="submit" class="booknow mt-2">Book Now</button>';
-                        echo '         </form>';
-                        echo '        </div>';
-                        echo '    </a>';
-                        echo '</div>';
-                    }
+    echo '<div class="showcase-item">';
+    echo '    <a href="decoration-details.php?decoration_id=' . $row["decoration_id"] . '">';
+    echo '        <div class="showcase-image">';
+    echo '            <img src="' . $row["img_path"] . '" alt="' . $row["decoration_name"] . '">';
+    echo '        </div>';
+    echo '        <div class="overlay">';
+    echo '            <h4>' . htmlspecialchars($row["decoration_name"]) . '</h4>';
+    echo '            <p class="vendor-label">By: ' . htmlspecialchars($row["vendor_name"]) . '</p>'; // New Line
+    echo '            <p>Price: ₹' . $row["decoration_price"] . '</p>';
+    echo '            <form action="booking.php" method="GET">';
+    echo '                <input type="hidden" name="decoration_id" value="' . $row["decoration_id"] . '">';
+    echo '                <button type="submit" class="booknow mt-2">Book Now</button>';
+    echo '            </form>';
+    echo '        </div>';
+    echo '    </a>';
+    echo '</div>';
+}
                 } else {
                     echo "No mehendi decorations available.";
                 }

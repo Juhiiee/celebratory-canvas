@@ -19,24 +19,10 @@ $decoration_id = $_POST['decoration_id'];
 $venue_date = $_POST['venue_date'];
 $venue = $_POST['venue'];
 $contact_info = $_POST['contact_info'];
-$total_amount = $_POST['total_amount'] ?? 0;
 
-// Fetch customer email
-$sql_customer = "SELECT c_email FROM customers WHERE c_id = ?";
-$stmt_customer = $conn->prepare($sql_customer);
-$stmt_customer->bind_param("i", $c_id);
-$stmt_customer->execute();
-$result_customer = $stmt_customer->get_result();
-$customer = $result_customer->fetch_assoc();
-
-if (!$customer) {
-    die("Customer not found.");
-}
-
-$c_email = $customer['c_email'];
-
-// Fetch decoration price + name
-$sql_decoration = "SELECT decoration_price, decoration_name FROM decorations WHERE decoration_id = ?";
+// 1. Fetch decoration price + vendor_id
+// Added vendor_id to the query so we know which vendor to pay
+$sql_decoration = "SELECT decoration_price, decoration_name, vendor_id FROM decorations WHERE decoration_id = ?";
 $stmt_decoration = $conn->prepare($sql_decoration);
 $stmt_decoration->bind_param("i", $decoration_id);
 $stmt_decoration->execute();
@@ -47,31 +33,49 @@ if (!$decoration) {
     die("Decoration not found.");
 }
 
-$decoration_price = (float) str_replace('₹', '', $decoration['decoration_price']);
+$vendor_id = $decoration['vendor_id']; // Get vendor ID
+$base_price = (float) str_replace('₹', '', $decoration['decoration_price']);
 $decoration_name = $decoration['decoration_name'];
 
-// Calculate vendor commission (5%)
-$vendor_commission = round($decoration_price * 0.05, 2);
+// 2. NEW CALCULATION LOGIC (10% Vendor / 5% Customer)
+$customer_fee = round($base_price * 0.05, 2);      // 5% Fee from Customer
+$vendor_commission = round($base_price * 0.10, 2); // 10% Commission from Vendor
+$total_to_pay = $base_price + $customer_fee;      // What customer pays
+$vendor_payout = $base_price - $vendor_commission; // What vendor gets[cite: 8]
 
-// Insert into orders table
+// Fetch customer email
+$sql_customer = "SELECT c_email FROM customers WHERE c_id = ?";
+$stmt_customer = $conn->prepare($sql_customer);
+$stmt_customer->bind_param("i", $c_id);
+$stmt_customer->execute();
+$result_customer = $stmt_customer->get_result();
+$customer = $result_customer->fetch_assoc();
+$c_email = $customer['c_email'];
+
+// 3. Updated INSERT with NEW COLUMNS
+// Ensure you have run the ALTER TABLE command we discussed earlier
 $sql_order = "INSERT INTO orders 
-(decoration_id, c_id, event_date, total_amount, vendor_commission, status, created_at, venue, contact_info) 
-VALUES (?, ?, ?, ?, ?, 'pending', NOW(), ?, ?)";
+(decoration_id, c_id, vendor_id, event_date, base_price, customer_fee, vendor_commission, total_amount, vendor_payout, status, created_at, venue, contact_info) 
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending', NOW(), ?, ?)";
 
 $stmt_order = $conn->prepare($sql_order);
-$stmt_order->bind_param("iisssss", 
+// Updated bind_param with new variables
+$stmt_order->bind_param("iiisdddddss", 
     $decoration_id, 
     $c_id, 
+    $vendor_id,
     $venue_date, 
-    $total_amount, 
-    $vendor_commission, 
+    $base_price,
+    $customer_fee,
+    $vendor_commission,
+    $total_to_pay,
+    $vendor_payout,
     $venue, 
     $contact_info
 );
-
 $stmt_order->execute();
 
-// Insert into payment table
+// 4. Insert into payment table using the calculated $total_to_pay
 $sql_payment = "INSERT INTO payment 
 (c_id, c_name, c_email, payment_date, paid_amount) 
 VALUES (?, ?, ?, NOW(), ?)";
@@ -81,20 +85,17 @@ $stmt_payment->bind_param("isss",
     $c_id, 
     $_SESSION['c_name'], 
     $c_email, 
-    $total_amount
+    $total_to_pay
 );
 
-// FINAL REDIRECT
 if ($stmt_payment->execute()) {
-
     header("Location: success.php?decoration_name=" . urlencode($decoration_name) . 
            "&venue_date=" . urlencode($venue_date) . 
            "&venue=" . urlencode($venue));
     exit();
-
 } else {
     echo "Error: " . $conn->error;
 }
 
-// Close connection
 $conn->close();
+?>
