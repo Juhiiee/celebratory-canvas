@@ -80,7 +80,7 @@ if (!isset($_SESSION['c_name'])) {
             <p id="p2">About Us</p>
             <div class="row">
                 <div class="col-md-6">
-                    <img src="aboutus-img.jpg" class="img-fluid" alt="About Us">
+                    <img src="main-imgs/aboutus-img.jpg" class="img-fluid" alt="About Us">
                 </div>
                 <div class="col-md-6 about-us">
                     <p>Welcome to Celebratory Canvas, your premier destination for exceptional wedding venue
@@ -300,9 +300,9 @@ if (!isset($_SESSION['c_name'])) {
 
     <script>
         const images = [
-            'img.jpg',
-            'img2.png',
-            'img3.png'
+            'main-imgs/img.jpg',
+            'main-imgs/img2.jpg',
+            'main-imgs/img3.jpg'
         ];
 
         let currentIndex = 0;
