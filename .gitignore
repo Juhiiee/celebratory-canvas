@@ -1,0 +1,33 @@
+# User uploads (runtime generated)
+uploads/
+
+# Large gallery assets (use a CDN or cloud storage)
+gallery-decor/
+
+# Heavy background image (consider CDN)
+img.jpg
+
+# Word temp files
+~$*.docx
+*.docx
+
+# Bootstrap source maps (not needed)
+css/*.map
+js/*.map
+
+# Bootstrap unminified (optional, keep only .min files)
+css/bootstrap.css
+css/bootstrap.rtl.css
+css/bootstrap-grid.css
+css/bootstrap-utilities.css
+css/bootstrap-reboot.css
+js/bootstrap.bundle.js
+js/bootstrap.esm.js
+js/bootstrap.js
+
+# Environment / secrets
+config.php
+
+# OS files
+.DS_Store
+Thumbs.db
