@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         $stmt->fetch();
 
         // Verify the password
+
         if (password_verify($c_password, $hashedPassword)) {
             // Password is correct, start session and store c_name and c_id
             $_SESSION['c_name'] = $c_name;
@@ -33,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             echo "<script>alert('Invalid password.');</script>";
         }
     } else {
-        echo "<script>alert('No user found with that username.');window.location.href='admin-panel.php.php';</script>";
+        echo "<script>alert('No user found with that username.');window.location.href='login.php';</script>";
     }
 
     $stmt->close();

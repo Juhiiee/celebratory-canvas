@@ -51,6 +51,11 @@ if (!isset($_SESSION['c_name'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
+                <li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.php">Profile</a>
+                    </li>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php" title="Logout">Logout</a>
                 </li>

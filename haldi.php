@@ -22,7 +22,7 @@ $sort = $_GET['sort'] ?? '';
 
 $sql = "SELECT decoration_id, decoration_name, img_path, decoration_price 
         FROM decorations 
-        WHERE category = 'wedding'";
+        WHERE category = 'haldi'";
 
 // SEARCH
 if (!empty($search)) {

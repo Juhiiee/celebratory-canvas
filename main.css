@@ -585,3 +585,46 @@ body {
     transform: translateY(0);
   }
 }
+
+/*for profile*/
+.profile-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  background: #f5f5f5;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  gap: 15px;
+}
+
+.booking-img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.booking-details h5 {
+  margin: 0;
+  font-family: "Baskerville";
+  color: #784e2c;
+}
+
+.booking-details p {
+  margin: 3px 0;
+  font-size: 14px;
+}
