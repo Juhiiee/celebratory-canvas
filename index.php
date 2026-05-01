@@ -19,6 +19,7 @@ if (!isset($_SESSION['c_name'])) {
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Great+Vibes&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <!--link rel="icon" href="logo.png" type="image/x-icon"-->
     <!--link rel="shortcut icon" href="logo.png" type="image/x-icon"-->
 
@@ -301,8 +302,9 @@ if (!isset($_SESSION['c_name'])) {
     <script>
         const images = [
             'main-imgs/img.jpg',
-            'main-imgs/img2.jpg',
-            'main-imgs/img3.jpg'
+            'main-imgs/img4.png',
+            'main-imgs/img5.jpeg',
+
         ];
 
         let currentIndex = 0;
@@ -311,7 +313,7 @@ if (!isset($_SESSION['c_name'])) {
         function changeBackground() {
             // Check if the section exists to avoid errors
             if (section) {
-                section.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${images[currentIndex]}')`;
+                section.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('${images[currentIndex]}')`;
                 currentIndex = (currentIndex + 1) % images.length;
             }
         }

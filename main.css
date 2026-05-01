@@ -2,13 +2,7 @@
 body {
   margin: 0;
   padding-top: 0; /* Adjust the value as needed */
-}
-
-#jumcia {
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-family: "Baskerville";
-  color: #fff;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Navigation Bar Styles */
@@ -115,14 +109,17 @@ body {
 }
 
 #p1 {
-  font-family: "Baskerville";
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 6vw, 80px);
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
   color: #fff;
-  font-size: 60px;
 }
 
 #p2 {
   font-family: "Dancing Script";
-  color: #fff;
+  color: #784e2c;
   font-size: 45px;
   text-align: center;
   padding: 15px 15px;
@@ -558,8 +555,11 @@ body {
 
 /* SUBTEXT */
 #jumcia {
-  font-size: 20px;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(20px, 2.5vw, 32px);
+  letter-spacing: 1px;
   margin-top: 10px;
+  color: #fff;
 }
 
 /* BASE ANIMATION */
