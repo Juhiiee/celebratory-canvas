@@ -1,14 +1,13 @@
 <?php
-$servername = "localhost"; // or your database host
-$username = "root";
-$password = "";
-$database = "canvas";
+$env = parse_ini_file(__DIR__ . '/.env');
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
+$conn = new mysqli(
+    $env['DB_HOST'],
+    $env['DB_USER'],
+    $env['DB_PASS'],
+    $env['DB_NAME']
+);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-?>
