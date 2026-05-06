@@ -1,69 +1,94 @@
+:root {
+  --sand: #dcc8ad;
+  --platinum: #eceeef;
+  --fawn: #d0b27a;
+  --ink: #6f3823;
+  --toffee: #d79f6c;
+  --bronze-2: #d49d65;
+  --blue: #a7b3c3;
+  --bone: #dfd5bc;
+  --paper: #dfd5bc;
+}
+
 body {
-  padding-top: 80px;
-  background: #f8f9fa;
+  min-height: 100vh;
+  padding-top: 96px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(167, 179, 195, 0.3), transparent 28rem),
+    linear-gradient(180deg, var(--paper), var(--platinum));
   text-align: center;
 }
 
-/* WRAPPER */
 .success-wrapper {
-  max-width: 500px;
-  margin: 100px auto;
+  width: min(560px, calc(100% - 32px));
+  margin: 64px auto;
+  padding: clamp(28px, 6vw, 44px);
+  border: 1px solid rgba(212, 157, 101, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 22px 58px rgba(111, 56, 35, 0.12);
 }
 
-/* CHECKMARK */
 .checkmark-circle {
-  width: 80px;
-  height: 80px;
-  background: #cf9b69;
-  color: white;
-  font-size: 40px;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 22px;
   border-radius: 50%;
+  background: var(--ink);
+  color: var(--bone);
+  font-size: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
-
-  animation: pop 0.5s ease;
+  animation: pop 420ms ease;
 }
 
 @keyframes pop {
   0% {
-    transform: scale(0);
+    transform: scale(0.72);
+    opacity: 0;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
-/* TEXT */
 h1 {
-  font-family: "Baskerville";
-  color: #784e2c;
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-weight: 700;
 }
 
 .sub-text {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  color: rgba(111, 56, 35, 0.72);
 }
 
-/* DETAILS BOX */
 .details-box {
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  padding: 18px;
+  border: 1px solid rgba(212, 157, 101, 0.12);
+  border-radius: 12px;
+  background: var(--paper);
 }
 
-/* BUTTON */
 .home-btn {
-  display: inline-block;
-  background: #cf9b69;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bone);
+  font-weight: 800;
   text-decoration: none;
 }
 
 .home-btn:hover {
-  background: #a87848;
+  background: var(--toffee);
+  color: var(--platinum);
 }

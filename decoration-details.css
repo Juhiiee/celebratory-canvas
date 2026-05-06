@@ -1,116 +1,172 @@
-#decoration-details {
-  padding: 100px 0 120px;
+:root {
+  --sand: #dcc8ad;
+  --copper: #cfb792;
+  --platinum: #eceeef;
+  --fawn: #d0b27a;
+  --oak: #d2c8b5;
+  --ink: #6f3823;
+  --toffee: #d79f6c;
+  --bronze-2: #d49d65;
+  --blue: #a7b3c3;
+  --bone: #dfd5bc;
+  --paper: #dfd5bc;
 }
 
-.container {
-  max-width: 1100px;
+#decoration-details {
+  padding: 126px 0 86px;
+}
+
+#decoration-details .container,
+.similar-section .container {
+  max-width: 1120px;
 }
 
 .custom-row {
-  justify-content: space-between;
+  align-items: stretch;
+  row-gap: 28px;
 }
 
-/* IMAGE */
 .image-box {
-  border-radius: 20px;
+  height: 100%;
+  min-height: 460px;
   overflow: hidden;
+  border: 1px solid rgba(212, 157, 101, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 22px 58px rgba(111, 56, 35, 0.13);
 }
 
 .main-img {
   width: 100%;
-  height: 450px;
+  height: 100%;
+  min-height: 460px;
   object-fit: cover;
-  transition: 0.4s;
+  display: block;
+  transition: transform 500ms ease;
 }
 
-.image-box:hover img {
-  transform: scale(1.05);
+.image-box:hover .main-img {
+  transform: scale(1.04);
 }
 
-/* DETAILS */
 .details-box {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid rgba(212, 157, 101, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 48px rgba(111, 56, 35, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .details-box h2 {
-  color: #784e2c;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
 }
 
 .price {
-  font-size: 1.8rem;
-  color: #784e2c;
-  font-weight: bold;
+  margin: 0 0 20px;
+  color: var(--toffee);
+  font-size: 1.6rem;
+  font-weight: 800;
 }
 
 .desc {
-  margin: 20px 0;
+  margin: 0 0 20px;
+  color: rgba(111, 56, 35, 0.74);
 }
 
-/* BUTTON */
 .confirm-btn {
   width: 100%;
-  margin-top: 20px;
-  background: #cf9b69;
-  border: none;
-  padding: 12px;
-  border-radius: 25px;
-  color: white;
+  min-height: 48px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bone);
+  font-weight: 800;
 }
 
 .confirm-btn:hover {
-  background: #a87848;
+  background: var(--toffee);
+  color: var(--platinum);
 }
 
-/* SIMILAR */
 .similar-section {
-  padding: 60px 0;
-  background: #f5f5f5;
+  padding: 72px 0;
+  background: linear-gradient(180deg, var(--platinum), var(--bone));
 }
 
 .similar-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
 }
 
 .similar-card {
-  border-radius: 15px;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(212, 157, 101, 0.12);
+  border-radius: 18px;
+  background: var(--platinum);
+  box-shadow: 0 14px 34px rgba(111, 56, 35, 0.1);
+}
+
+.similar-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .similar-card img {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
+  display: block;
+  transition: transform 420ms ease;
+}
+
+.similar-card:hover img {
+  transform: scale(1.05);
 }
 
 .similar-overlay {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
+  inset: auto 0 0;
+  padding: 46px 16px 15px;
+  color: var(--platinum);
+  background: linear-gradient(180deg, transparent, rgba(111, 56, 35, 0.88));
 }
 
-.custom-row {
-  display: flex;
-  flex-wrap: wrap;
+.similar-overlay p {
+  margin: 2px 0;
+  font-weight: 700;
 }
 
-/* force side-by-side */
-.custom-row > div {
-  flex: 0 0 48%;
-  max-width: 48%;
+@media (max-width: 992px) {
+  .similar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-  .custom-row > div {
-    flex: 0 0 100%;
-    max-width: 100%;
+  #decoration-details {
+    padding-top: 112px;
+  }
+
+  .image-box,
+  .main-img {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 520px) {
+  .similar-grid {
+    grid-template-columns: 1fr;
   }
 }

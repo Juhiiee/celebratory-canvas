@@ -25,7 +25,7 @@ if (!isset($_SESSION['c_name'])) {
 
 </head>
 
-<>
+<body>
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg fixed-top custom-navbar">

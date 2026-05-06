@@ -34,6 +34,7 @@ if (!$decoration) {
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking - Celebratory Canvas</title>
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -48,8 +49,12 @@ if (!$decoration) {
     <div class="container-fluid">
         <button onclick="history.back()" class="back-button">&#8249;</button>
         <a class="navbar-brand" href="index.php">Celebratory Canvas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bookingNavbar"
+            aria-controls="bookingNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="bookingNavbar">
             <ul class="navbar-nav ms-auto px-4">
                 <li><a class="nav-link" href="index.php#home">Home</a></li>
                 <li><a class="nav-link" href="index.php#about">About</a></li>
@@ -133,5 +138,6 @@ if (!$decoration) {
     <p>&copy; 2024 Celebratory Canvas</p>
 </footer>
 
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

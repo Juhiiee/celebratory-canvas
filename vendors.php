@@ -121,10 +121,6 @@ $total = mysqli_num_rows($data);
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 admin-panel">
                 <div class="text-center">
                     <h1>Vendors</h1>
-                    <p>
-                        <a href="add-vendors.php" class="decor-link" title="Add Vendors">Add
-                            Vendor</a>
-                    </p>
                 </div>
 
                 <?php if ($total > 0) { ?>

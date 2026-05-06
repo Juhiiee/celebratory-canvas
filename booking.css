@@ -1,3 +1,18 @@
+:root {
+  --sand: #dcc8ad;
+  --copper: #cfb792;
+  --platinum: #eceeef;
+  --fawn: #d0b27a;
+  --oak: #d2c8b5;
+  --ink: #6f3823;
+  --oak-2: #dfd5bc;
+  --toffee: #d79f6c;
+  --bronze-2: #d49d65;
+  --blue: #a7b3c3;
+  --bone: #dfd5bc;
+  --paper: #dfd5bc;
+}
+
 /* ===== WRAPPER ===== */
 .booking-wrapper {
   display: flex;
@@ -22,19 +37,19 @@
 
 .booking-left h3 {
   font-family: "Baskerville";
-  color: #784e2c;
+  color: #6f3823;
 }
 
 .price {
   font-size: 1.5rem;
-  color: #784e2c;
+  color: #6f3823;
   font-weight: bold;
 }
 
 /* ===== RIGHT SIDE ===== */
 .booking-right {
   flex: 1;
-  background: white;
+  background: var(--platinum);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -42,7 +57,7 @@
 
 .booking-right h2 {
   font-family: "Baskerville";
-  color: #784e2c;
+  color: #6f3823;
   margin-bottom: 20px;
 }
 
@@ -59,23 +74,23 @@ input {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #d2c8b5;
 }
 
 /* ===== BUTTON ===== */
 .confirm-btn {
   width: 100%;
   margin-top: 20px;
-  background: #cf9b69;
+  background: var(--toffee);
   border: none;
   padding: 12px;
   border-radius: 25px;
-  color: white;
+  color: var(--platinum);
   font-size: 1rem;
 }
 
 .confirm-btn:hover {
-  background: #a87848;
+  background: var(--bronze-2);
 }
 
 /* ===== RESPONSIVE ===== */

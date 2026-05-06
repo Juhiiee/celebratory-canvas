@@ -108,22 +108,6 @@ $total = mysqli_num_rows($data);
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 admin-panel">
                 <div class="text-center">
                     <h1>Decorations</h1>
-                    <p>
-                        <a href="add.php" class="decor-link" title="Add Decorations">Add</a>
-                        <a href="decorations.php" class="decor-link" title="View All Decorations">View All</a>
-                        <a href="decorations.php?category=Wedding" class="decor-link"
-                            title="View All Wedding Decorations">Wedding</a>
-                        <a href="decorations.php?category=Engagement" class="decor-link"
-                            title="View All Engagement Decorations">Engagement</a>
-                        <a href="decorations.php?category=Sangeet" class="decor-link"
-                            title="View All Sangeet Decorations">Sangeet</a>
-                        <a href="decorations.php?category=Mehendi" class="decor-link"
-                            title="View All Mehendi Decorations">Mehendi</a>
-                        <a href="decorations.php?category=Haldi" class="decor-link"
-                            title="View All Haldi Decorations">Haldi</a>
-                        <a href="decorations.php?category=Reception" class="decor-link"
-                            title="View All Reception Decorations">Reception</a>
-                    </p>
                 </div>
 
                 <?php
