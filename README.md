@@ -47,7 +47,7 @@ Celebratory Canvas is a PHP and MySQL based wedding decoration booking platform.
 - Add customer reviews and ratings
 - Improve security with stronger validation and role-based access control
 
-  # How to Run the Project
+## How to Run the Project
 
 ## Requirements
 
