@@ -46,3 +46,45 @@ Celebratory Canvas is a PHP and MySQL based wedding decoration booking platform.
 - Add vendor approval workflow
 - Add customer reviews and ratings
 - Improve security with stronger validation and role-based access control
+
+  # How to Run the Project
+
+## Requirements
+
+* XAMPP
+* PHP
+* MySQL
+* Web Browser
+
+## Steps to Run
+
+1. Clone the repository
+
+```bash id="5bd2rr"
+git clone https://github.com/Juhiiee/celebratory-canvas.git
+```
+
+2. Move the project folder to:
+
+```text id="8x36gm"
+C:\xampp\htdocs\
+```
+
+3. Start Apache and MySQL from XAMPP Control Panel.
+
+4. Open phpMyAdmin and create a database named:
+
+```text id="x8sg4w"
+canvas
+```
+
+5. Import the `canvas.sql` file into the database.
+
+6. Rename `.env.example` to `.env`
+
+7. Open the project in browser:
+
+```text id="x8jpn0"
+http://localhost/celebratory-canvas
+```
+
